@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useMemo, useState } from 'react';
+import React, { useRef, useMemo, useState, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Text, Box, Cylinder } from '@react-three/drei';
 import { motion } from 'framer-motion';
@@ -39,6 +39,7 @@ const FloorComponent = ({
   const floorMeshRef = useRef<THREE.Mesh>(null);
   const edgesRef = useRef<THREE.LineSegments>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [animationScale, setAnimationScale] = useState(1);
   
   // Position floors as slices of a cube - closer together for layered look
   const floorY = (floor.level - 3) * 1.5; // Center around 0, 1.5 units apart
@@ -46,6 +47,36 @@ const FloorComponent = ({
   
   // Cube dimensions
   const cubeSize = 12;
+
+  // Floor scaling animation when selected
+  useEffect(() => {
+    if (isSelected && isDetailView) {
+      // Animate scale from 1x to 1.8x over 1200ms (less aggressive scaling)
+      const startTime = Date.now();
+      const duration = 1200;
+      const startScale = 1;
+      const targetScale = 1.8;
+
+      const animateScale = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Cubic-bezier easing
+        const easeProgress = progress * progress * (3 - 2 * progress);
+        const currentScale = startScale + (targetScale - startScale) * easeProgress;
+        
+        setAnimationScale(currentScale);
+
+        if (progress < 1) {
+          requestAnimationFrame(animateScale);
+        }
+      };
+
+      animateScale();
+    } else {
+      setAnimationScale(1);
+    }
+  }, [isSelected, isDetailView]);
 
   // Animate floor glow effect
   useFrame((state) => {
@@ -87,7 +118,12 @@ const FloorComponent = ({
 
   return React.createElement(
     'group',
-    { ref: floorRef, position: [0, floorY, 0] },
+    { 
+      ref: floorRef, 
+      position: [0, floorY, 0], 
+      scale: [animationScale, 1, animationScale],
+      rotation: isDetailView && isSelected ? [0, 0, 0] : [0, Math.PI / 4, 0] // No rotation in detail view, 45° in overview
+    },
     // Main Floor Plane - Paper-thin flat surface
     React.createElement(Box, {
       ref: floorMeshRef,
@@ -198,18 +234,23 @@ export const GymFloors = ({
   //   }
   // });
 
-  return React.createElement('group', { ref: groupRef },
-    floors.map((floor) => 
-      React.createElement(FloorComponent, {
-        key: floor.id,
-        floor: floor,
-        isSelected: floor.isSelected,
-        isDetailView: isDetailView,
-        onFloorClick: onFloorClick,
-        onMachineClick: onMachineClick,
-        onMachineToggle: onMachineToggle,
-        selectedMachine: selectedMachine
-      })
-    )
+  return React.createElement('group', { 
+    ref: groupRef,
+    rotation: [0, (100 * Math.PI) / 180, 0] // Rotate 100 degrees around Y-axis to make text visible
+  },
+    floors
+      .filter(floor => floor.opacity > 0) // Only render visible floors
+      .map((floor) => 
+        React.createElement(FloorComponent, {
+          key: floor.id,
+          floor: floor,
+          isSelected: floor.isSelected,
+          isDetailView: isDetailView,
+          onFloorClick: onFloorClick,
+          onMachineClick: onMachineClick,
+          onMachineToggle: onMachineToggle,
+          selectedMachine: selectedMachine
+        })
+      )
   );
 };

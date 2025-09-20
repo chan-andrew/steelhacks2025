@@ -58,15 +58,15 @@ const createInitialFloors = (): GymFloor[] => {
 };
 
 const INITIAL_CAMERA_STATE: CameraState = {
-  position: [-15, 8, -15], // Rotated 180 degrees to fix text orientation
+  position: [18, 18, 18], // More balanced isometric angle - equal X, Y, Z for better perspective
   target: [0, 0, 0], // Look at center of cube
-  fov: 60,
+  fov: 50, // Slightly wider FOV
 };
 
 const FLOOR_DETAIL_CAMERA_STATE: CameraState = {
-  position: [0, 20, 0], // Top-down view for detail
+  position: [0, 30, 0], // Higher up for less zoom
   target: [0, 0, 0], // Look at center of selected floor
-  fov: 50,
+  fov: 75, // Wider field of view for less zoom
 };
 
 export const useGymState = () => {
@@ -83,29 +83,42 @@ export const useGymState = () => {
   const selectFloor = useCallback((floorId: number) => {
     const floorY = (floorId - 3) * 1.5; // Match the floor positioning
     
+    // Phase 1: Start fade-out of other floors (0-800ms)
     setGymState(prev => ({
       ...prev,
       isTransitioning: true,
       floors: prev.floors.map(floor => ({
         ...floor,
         isSelected: floor.id === floorId,
-        opacity: floor.id === floorId ? 0.8 : 0.1,
+        opacity: floor.id === floorId ? 0.8 : 0.1, // Start fading other floors
       })),
-      currentView: {
-        type: 'floor-detail',
-        selectedFloor: floorId,
-        cameraState: {
-          ...FLOOR_DETAIL_CAMERA_STATE,
-          position: [0, floorY + 15, 0], // Position camera above the selected floor
-          target: [0, floorY, 0], // Look down at the selected floor
-        },
-      },
     }));
 
-    // Reset transition state after animation
+    // Phase 2: Complete fade-out and start camera movement (800ms)
+    setTimeout(() => {
+      setGymState(prev => ({
+        ...prev,
+        floors: prev.floors.map(floor => ({
+          ...floor,
+          isSelected: floor.id === floorId,
+          opacity: floor.id === floorId ? 0.8 : 0, // Complete fade-out
+        })),
+        currentView: {
+          type: 'floor-detail',
+          selectedFloor: floorId,
+          cameraState: {
+            ...FLOOR_DETAIL_CAMERA_STATE,
+            position: [0, floorY + 25, 0], // Higher camera position for less zoom
+            target: [0, floorY, 0], // Look down at selected floor
+          },
+        },
+      }));
+    }, 800);
+
+    // Phase 3: Reset transition state after full animation (1200ms total)
     setTimeout(() => {
       setGymState(prev => ({ ...prev, isTransitioning: false }));
-    }, 1200); // Longer transition for smooth camera movement
+    }, 1200);
   }, []);
 
   const returnToOverview = useCallback(() => {
@@ -128,6 +141,25 @@ export const useGymState = () => {
     setTimeout(() => {
       setGymState(prev => ({ ...prev, isTransitioning: false }));
     }, 1200); // Match the transition duration
+  }, []);
+
+  const resetToMainPage = useCallback(() => {
+    console.log('🏠 Home button clicked - resetting to main page');
+    // Complete reset to initial state - like refreshing the page
+    setGymState({
+      floors: createInitialFloors(),
+      currentView: {
+        type: 'overview',
+        cameraState: INITIAL_CAMERA_STATE,
+      },
+      isTransitioning: true,
+      selectedMachine: undefined,
+    });
+
+    // Reset transition state after animation
+    setTimeout(() => {
+      setGymState(prev => ({ ...prev, isTransitioning: false }));
+    }, 1200);
   }, []);
 
   const toggleMachineStatus = useCallback((machineId: string) => {
@@ -175,6 +207,7 @@ export const useGymState = () => {
     actions: {
       selectFloor,
       returnToOverview,
+      resetToMainPage,
       toggleMachineStatus,
       selectMachine,
     },

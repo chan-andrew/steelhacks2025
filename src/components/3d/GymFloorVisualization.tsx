@@ -64,10 +64,10 @@ export const GymFloorVisualization = ({ className = '' }: GymFloorVisualizationP
       <TouchGestureOverlay onGesture={handleTouchGesture} className="w-full h-full">
         <Canvas
           shadows={mobileOpt.performance.animationQuality !== 'low'}
-          camera={{ 
-            position: [-15, 8, -15], // Rotated 180 degrees to fix text orientation
-            fov: mobileOpt.viewport.fov 
-          }}
+      camera={{ 
+        position: [18, 18, 18], // More balanced isometric angle - equal X, Y, Z for better perspective
+        fov: 50 // Slightly wider FOV
+      }}
           className="w-full h-full"
           onPointerMissed={handleBackgroundClick}
           dpr={mobileOpt.performance.pixelRatio}

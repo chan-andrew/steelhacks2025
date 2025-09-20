@@ -15,13 +15,18 @@ interface GymMachineProps {
 
 const getMachineColor = (type: Machine['type'], isInUse: boolean) => {
   const baseColors = {
-    cardio: '#FF6B6B',
-    strength: '#4ECDC4',
-    functional: '#45B7D1',
-    'free-weights': '#96CEB4',
+    cardio: '#008B8B',        // Teal for cardio
+    strength: '#006666',      // Darker teal for strength  
+    functional: '#008B8B',    // Teal for functional
+    'free-weights': '#8B0000', // Dark red for free weights
   };
 
-  return isInUse ? '#FF4444' : baseColors[type];
+  // For free weights, always show red. For others, show red when in use
+  if (type === 'free-weights') {
+    return '#DC143C'; // Crimson red for free weights
+  }
+  
+  return isInUse ? '#DC143C' : baseColors[type]; // Red when in use, teal when available
 };
 
 const getMachineGeometry = (type: Machine['type']) => {
@@ -205,15 +210,17 @@ export const GymMachine = ({ machine, isSelected, onClick, onToggle }: GymMachin
         </>
       )}
 
-      {/* Status Indicator */}
+      {/* Status Indicator Dot */}
       <Sphere
         args={[0.1]}
         position={[0, geometry.height / 2 + 0.2, 0]}
         material={
           new THREE.MeshStandardMaterial({
-            color: machine.isInUse ? '#FF4444' : '#44FF44',
-            emissive: machine.isInUse ? '#FF4444' : '#44FF44',
-            emissiveIntensity: 0.5,
+            color: machine.isInUse ? '#FF0000' : '#00FF00', // Red for occupied, green for available
+            emissive: machine.isInUse ? '#FF0000' : '#00FF00',
+            emissiveIntensity: 0.6,
+            transparent: true,
+            opacity: 0.9,
           })
         }
       />

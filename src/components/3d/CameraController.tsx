@@ -40,10 +40,13 @@ export const CameraController = ({
       const elapsed = Date.now() - startTime.current;
       const progress = Math.min(elapsed / transitionDuration, 1);
       
-      // Smooth easing function (ease-in-out)
-      const easeProgress = progress < 0.5 
-        ? 2 * progress * progress 
-        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+      // Cubic-bezier easing function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      const cubicBezierEase = (t: number): number => {
+        // Approximation of cubic-bezier(0.25, 0.46, 0.45, 0.94)
+        return t * t * (3 - 2 * t); // Smooth step function as approximation
+      };
+      
+      const easeProgress = cubicBezierEase(progress);
 
       // Interpolate camera position
       const targetPos = new Vector3(...targetState.position);

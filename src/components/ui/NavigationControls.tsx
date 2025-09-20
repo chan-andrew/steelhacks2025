@@ -42,7 +42,10 @@ export const NavigationControls = ({
 
       {/* Home Button */}
       <motion.button
-        onClick={onHome}
+        onClick={() => {
+          console.log('🏠 Home button UI clicked');
+          onHome();
+        }}
         className="glass-effect touch-target flex items-center justify-center w-12 h-12 rounded-xl text-primary-white hover:text-accent-gold transition-colors duration-200 active:scale-95"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}

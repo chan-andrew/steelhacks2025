@@ -1,9 +1,11 @@
 'use client';
 
 import { Suspense } from 'react';
+import { motion } from 'framer-motion';
 import { ClientOnly3D } from '@/components/ClientOnly3D';
 import { NavigationControls } from '@/components/ui/NavigationControls';
 import { MachineStatusPanel } from '@/components/ui/MachineStatusPanel';
+import { EquipmentLegend } from '@/components/ui/EquipmentLegend';
 import { LoadingScreen } from '@/components/ui/LoadingSpinner';
 import { useGymState } from '@/hooks/useGymState';
 
@@ -39,7 +41,7 @@ export default function Home() {
       <NavigationControls
         showBackButton={showBackButton}
         onBack={actions.returnToOverview}
-        onHome={actions.returnToOverview}
+        onHome={actions.resetToMainPage}
         selectedFloor={selectedFloor?.id}
       />
 
@@ -72,19 +74,49 @@ export default function Home() {
         </div>
       )}
 
-      {/* Floor Detail Instructions */}
+      {/* Floor Detail Instructions with animated fade-in */}
       {isFloorDetailView && selectedFloor && !gymState.isTransitioning && (
-        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 pointer-events-none">
+        <motion.div
+          className="absolute top-20 left-1/2 transform -translate-x-1/2 pointer-events-none"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 0.4, 
+            delay: 1.0, // Start at 1000ms
+            ease: [0.25, 0.46, 0.45, 0.94] // cubic-bezier easing
+          }}
+        >
           <div className="glass-effect p-4 rounded-xl text-center">
-            <h2 className="text-lg font-semibold text-primary-white mb-1">
+            <motion.h2 
+              className="text-lg font-semibold text-primary-white mb-1"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ 
+                duration: 0.3, 
+                delay: 1.1,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+            >
               {selectedFloor.name}
-            </h2>
-            <p className="text-primary-white/70 text-sm">
+            </motion.h2>
+            <motion.p 
+              className="text-primary-white/70 text-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ 
+                duration: 0.3, 
+                delay: 1.2,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+            >
               Tap machines to view details • Double-tap to toggle status
-            </p>
+            </motion.p>
           </div>
-        </div>
+        </motion.div>
       )}
+
+      {/* Equipment Legend - shows in floor detail view */}
+      <EquipmentLegend show={isFloorDetailView && !gymState.isTransitioning} />
 
       {/* Performance Info (Development Only) */}
       {process.env.NODE_ENV === 'development' && (
