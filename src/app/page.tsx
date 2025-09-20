@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ClientOnly3D } from '@/components/ClientOnly3D';
 import { NavigationControls } from '@/components/ui/NavigationControls';
@@ -14,6 +14,19 @@ export default function Home() {
 
   const isFloorDetailView = gymState.currentView.type === 'floor-detail';
   const showBackButton = isFloorDetailView;
+
+  useEffect(() => {
+    const eventSource = new EventSource("/api/stream");
+
+    eventSource.onmessage = (event: MessageEvent) => {
+      const data = JSON.parse(event.data);
+      console.log("Machine change:", data);
+    };
+
+    return () => {
+      eventSource.close();
+    };
+  }, []);
 
   return (
     <main className="w-screen h-screen bg-black overflow-hidden relative">
