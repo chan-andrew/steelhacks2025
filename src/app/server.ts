@@ -2,6 +2,7 @@
 
 import clientPromise from "@/lib/mongodb";
 import { setMachineInUse, setMachineNotInUse } from "@/lib/updateInUse";
+import { findNearest } from "@/lib/findClosestMachine";
 
 export async function getMachines() {
     try {
@@ -15,7 +16,7 @@ export async function getMachines() {
     }
 }
 
-export { setMachineNotInUse, setMachineInUse };
+export { setMachineNotInUse, setMachineInUse, findNearest };
 
 
 
