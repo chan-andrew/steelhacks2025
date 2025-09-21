@@ -1,0 +1,942 @@
+[
+  {
+    "id": 1,
+    "name": "Dip Machine",
+    "floor": 1,
+    "in_use": false,
+    "x": 4.0,
+    "y": 8.0,
+    "muscles": [
+      "Triceps"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Hamstring Curl",
+    "floor": 1,
+    "in_use": false,
+    "x": 16.0,
+    "y": 8.0,
+    "muscles": [
+      "Hamstrings"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Treadmill",
+    "floor": 1,
+    "in_use": false,
+    "x": 12.0,
+    "y": 16.0,
+    "muscles": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Hack Squat",
+    "floor": 1,
+    "in_use": false,
+    "x": 4.0,
+    "y": 4.0,
+    "muscles": [
+      "Quads",
+      "Glutes"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Dip Machine",
+    "floor": 1,
+    "in_use": false,
+    "x": 16.0,
+    "y": 16.0,
+    "muscles": [
+      "Triceps"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Pull Up",
+    "floor": 1,
+    "in_use": false,
+    "x": 8.0,
+    "y": 8.0,
+    "muscles": [
+      "Lats",
+      "Upper Back"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Leg Extension",
+    "floor": 1,
+    "in_use": false,
+    "x": 4.0,
+    "y": 12.0,
+    "muscles": [
+      "Quads"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Stair Master",
+    "floor": 1,
+    "in_use": false,
+    "x": 8.0,
+    "y": 4.0,
+    "muscles": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Dip Machine",
+    "floor": 1,
+    "in_use": false,
+    "x": 16.0,
+    "y": 12.0,
+    "muscles": [
+      "Triceps"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Lateral Raise Machine",
+    "floor": 1,
+    "in_use": false,
+    "x": 12.0,
+    "y": 12.0,
+    "muscles": [
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Multi-purpose Weight Rack",
+    "floor": 1,
+    "in_use": false,
+    "x": 8.0,
+    "y": 16.0,
+    "muscles": [
+      "Calves",
+      "Chest",
+      "Back",
+      "Shoulder",
+      "Hamstrings",
+      "Quads",
+      "Glutes"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Stair Master",
+    "floor": 1,
+    "in_use": false,
+    "x": 12.0,
+    "y": 4.0,
+    "muscles": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Cable",
+    "floor": 1,
+    "in_use": false,
+    "x": 8.0,
+    "y": 12.0,
+    "muscles": [
+      "Triceps",
+      "Biceps",
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Hack Squat",
+    "floor": 1,
+    "in_use": false,
+    "x": 16.0,
+    "y": 4.0,
+    "muscles": [
+      "Quads",
+      "Glutes"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Seated Row",
+    "floor": 1,
+    "in_use": false,
+    "x": 12.0,
+    "y": 8.0,
+    "muscles": [
+      "Lats",
+      "Upper Back"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Bench",
+    "floor": 1,
+    "in_use": false,
+    "x": 4.0,
+    "y": 16.0,
+    "muscles": [
+      "Chest"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Treadmill",
+    "floor": 2,
+    "in_use": false,
+    "x": 8.0,
+    "y": 16.0,
+    "muscles": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Multi-purpose Weight Rack",
+    "floor": 2,
+    "in_use": false,
+    "x": 16.0,
+    "y": 4.0,
+    "muscles": [
+      "Calves",
+      "Chest",
+      "Back",
+      "Shoulder",
+      "Hamstrings",
+      "Quads",
+      "Glutes"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Pec Dec",
+    "floor": 2,
+    "in_use": false,
+    "x": 12.0,
+    "y": 16.0,
+    "muscles": [
+      "Chest",
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Pull Up",
+    "floor": 2,
+    "in_use": false,
+    "x": 8.0,
+    "y": 12.0,
+    "muscles": [
+      "Lats",
+      "Upper Back"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Lateral Raise Machine",
+    "floor": 2,
+    "in_use": false,
+    "x": 12.0,
+    "y": 12.0,
+    "muscles": [
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Dip Machine",
+    "floor": 2,
+    "in_use": false,
+    "x": 16.0,
+    "y": 16.0,
+    "muscles": [
+      "Triceps"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Crunch Machine",
+    "floor": 2,
+    "in_use": false,
+    "x": 8.0,
+    "y": 4.0,
+    "muscles": [
+      "Abs"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Cable",
+    "floor": 2,
+    "in_use": false,
+    "x": 4.0,
+    "y": 16.0,
+    "muscles": [
+      "Triceps",
+      "Biceps",
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Multi-purpose Weight Rack",
+    "floor": 2,
+    "in_use": false,
+    "x": 16.0,
+    "y": 12.0,
+    "muscles": [
+      "Calves",
+      "Chest",
+      "Back",
+      "Shoulder",
+      "Hamstrings",
+      "Quads",
+      "Glutes"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Treadmill",
+    "floor": 2,
+    "in_use": false,
+    "x": 4.0,
+    "y": 12.0,
+    "muscles": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Cable",
+    "floor": 2,
+    "in_use": false,
+    "x": 4.0,
+    "y": 8.0,
+    "muscles": [
+      "Triceps",
+      "Biceps",
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Hip Thrust",
+    "floor": 2,
+    "in_use": false,
+    "x": 4.0,
+    "y": 4.0,
+    "muscles": [
+      "Glutes"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Stair Master",
+    "floor": 2,
+    "in_use": false,
+    "x": 12.0,
+    "y": 8.0,
+    "muscles": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Cable",
+    "floor": 2,
+    "in_use": false,
+    "x": 8.0,
+    "y": 8.0,
+    "muscles": [
+      "Triceps",
+      "Biceps",
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Pec Dec",
+    "floor": 2,
+    "in_use": false,
+    "x": 16.0,
+    "y": 8.0,
+    "muscles": [
+      "Chest",
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Shoulder Press Machine",
+    "floor": 2,
+    "in_use": false,
+    "x": 12.0,
+    "y": 4.0,
+    "muscles": [
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Hip Thrust",
+    "floor": 3,
+    "in_use": false,
+    "x": 8.0,
+    "y": 12.0,
+    "muscles": [
+      "Glutes"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Leg Extension",
+    "floor": 3,
+    "in_use": false,
+    "x": 8.0,
+    "y": 8.0,
+    "muscles": [
+      "Quads"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Dip Machine",
+    "floor": 3,
+    "in_use": false,
+    "x": 4.0,
+    "y": 12.0,
+    "muscles": [
+      "Triceps"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Pec Dec",
+    "floor": 3,
+    "in_use": false,
+    "x": 16.0,
+    "y": 4.0,
+    "muscles": [
+      "Chest",
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Bicycle",
+    "floor": 3,
+    "in_use": false,
+    "x": 16.0,
+    "y": 16.0,
+    "muscles": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Dip Machine",
+    "floor": 3,
+    "in_use": false,
+    "x": 4.0,
+    "y": 8.0,
+    "muscles": [
+      "Triceps"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Multi-purpose Weight Rack",
+    "floor": 3,
+    "in_use": false,
+    "x": 8.0,
+    "y": 16.0,
+    "muscles": [
+      "Calves",
+      "Chest",
+      "Back",
+      "Shoulder",
+      "Hamstrings",
+      "Quads",
+      "Glutes"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Dumbbells",
+    "floor": 3,
+    "in_use": false,
+    "x": 12.0,
+    "y": 16.0,
+    "muscles": [
+      "Chest",
+      "Biceps",
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Leg Press",
+    "floor": 3,
+    "in_use": false,
+    "x": 4.0,
+    "y": 16.0,
+    "muscles": [
+      "Quads",
+      "Glutes"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Leg Extension",
+    "floor": 3,
+    "in_use": false,
+    "x": 16.0,
+    "y": 12.0,
+    "muscles": [
+      "Quads"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Lateral Raise Machine",
+    "floor": 3,
+    "in_use": false,
+    "x": 8.0,
+    "y": 4.0,
+    "muscles": [
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Pull Up",
+    "floor": 3,
+    "in_use": false,
+    "x": 12.0,
+    "y": 8.0,
+    "muscles": [
+      "Lats",
+      "Upper Back"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Crunch Machine",
+    "floor": 3,
+    "in_use": false,
+    "x": 12.0,
+    "y": 12.0,
+    "muscles": [
+      "Abs"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Calf Raise",
+    "floor": 3,
+    "in_use": false,
+    "x": 16.0,
+    "y": 8.0,
+    "muscles": [
+      "Calves"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Pec Dec",
+    "floor": 3,
+    "in_use": false,
+    "x": 12.0,
+    "y": 4.0,
+    "muscles": [
+      "Chest",
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Lateral Raise Machine",
+    "floor": 3,
+    "in_use": false,
+    "x": 4.0,
+    "y": 4.0,
+    "muscles": [
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Calf Raise",
+    "floor": 4,
+    "in_use": false,
+    "x": 4.0,
+    "y": 4.0,
+    "muscles": [
+      "Calves"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Preacher Machine",
+    "floor": 4,
+    "in_use": false,
+    "x": 8.0,
+    "y": 8.0,
+    "muscles": [
+      "Biceps"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Dumbbells",
+    "floor": 4,
+    "in_use": false,
+    "x": 16.0,
+    "y": 8.0,
+    "muscles": [
+      "Chest",
+      "Biceps",
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Shoulder Press Machine",
+    "floor": 4,
+    "in_use": false,
+    "x": 4.0,
+    "y": 12.0,
+    "muscles": [
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Pull Up",
+    "floor": 4,
+    "in_use": false,
+    "x": 8.0,
+    "y": 16.0,
+    "muscles": [
+      "Lats",
+      "Upper Back"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Cable",
+    "floor": 4,
+    "in_use": false,
+    "x": 16.0,
+    "y": 4.0,
+    "muscles": [
+      "Triceps",
+      "Biceps",
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Stair Master",
+    "floor": 4,
+    "in_use": false,
+    "x": 12.0,
+    "y": 12.0,
+    "muscles": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Bench",
+    "floor": 4,
+    "in_use": false,
+    "x": 12.0,
+    "y": 16.0,
+    "muscles": [
+      "Chest"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Hip Thrust",
+    "floor": 4,
+    "in_use": false,
+    "x": 16.0,
+    "y": 16.0,
+    "muscles": [
+      "Glutes"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Lat Pull Down",
+    "floor": 4,
+    "in_use": false,
+    "x": 12.0,
+    "y": 4.0,
+    "muscles": [
+      "Lats"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Chest Press Machine",
+    "floor": 4,
+    "in_use": false,
+    "x": 16.0,
+    "y": 12.0,
+    "muscles": [
+      "Chest"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Hack Squat",
+    "floor": 4,
+    "in_use": false,
+    "x": 4.0,
+    "y": 16.0,
+    "muscles": [
+      "Quads",
+      "Glutes"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Pec Dec",
+    "floor": 4,
+    "in_use": false,
+    "x": 8.0,
+    "y": 4.0,
+    "muscles": [
+      "Chest",
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Seated Row",
+    "floor": 4,
+    "in_use": false,
+    "x": 12.0,
+    "y": 8.0,
+    "muscles": [
+      "Lats",
+      "Upper Back"
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Dip Machine",
+    "floor": 4,
+    "in_use": false,
+    "x": 8.0,
+    "y": 12.0,
+    "muscles": [
+      "Triceps"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Leg Extension",
+    "floor": 4,
+    "in_use": false,
+    "x": 4.0,
+    "y": 8.0,
+    "muscles": [
+      "Quads"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Lat Pull Down",
+    "floor": 5,
+    "in_use": false,
+    "x": 4.0,
+    "y": 8.0,
+    "muscles": [
+      "Lats"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Bicycle",
+    "floor": 5,
+    "in_use": false,
+    "x": 4.0,
+    "y": 12.0,
+    "muscles": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Preacher Machine",
+    "floor": 5,
+    "in_use": false,
+    "x": 8.0,
+    "y": 12.0,
+    "muscles": [
+      "Biceps"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Bicycle",
+    "floor": 5,
+    "in_use": false,
+    "x": 16.0,
+    "y": 4.0,
+    "muscles": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Lat Pull Down",
+    "floor": 5,
+    "in_use": false,
+    "x": 12.0,
+    "y": 4.0,
+    "muscles": [
+      "Lats"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Shoulder Press Machine",
+    "floor": 5,
+    "in_use": false,
+    "x": 4.0,
+    "y": 4.0,
+    "muscles": [
+      "Shoulder"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Crunch Machine",
+    "floor": 5,
+    "in_use": false,
+    "x": 16.0,
+    "y": 8.0,
+    "muscles": [
+      "Abs"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Seated Row",
+    "floor": 5,
+    "in_use": false,
+    "x": 8.0,
+    "y": 4.0,
+    "muscles": [
+      "Lats",
+      "Upper Back"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Dip Machine",
+    "floor": 5,
+    "in_use": false,
+    "x": 12.0,
+    "y": 16.0,
+    "muscles": [
+      "Triceps"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Crunch Machine",
+    "floor": 5,
+    "in_use": false,
+    "x": 12.0,
+    "y": 12.0,
+    "muscles": [
+      "Abs"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Stair Master",
+    "floor": 5,
+    "in_use": false,
+    "x": 16.0,
+    "y": 12.0,
+    "muscles": [
+      "Cardio"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Crunch Machine",
+    "floor": 5,
+    "in_use": false,
+    "x": 12.0,
+    "y": 8.0,
+    "muscles": [
+      "Abs"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Preacher Machine",
+    "floor": 5,
+    "in_use": false,
+    "x": 16.0,
+    "y": 16.0,
+    "muscles": [
+      "Biceps"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Leg Extension",
+    "floor": 5,
+    "in_use": false,
+    "x": 8.0,
+    "y": 16.0,
+    "muscles": [
+      "Quads"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Lat Pull Down",
+    "floor": 5,
+    "in_use": false,
+    "x": 8.0,
+    "y": 8.0,
+    "muscles": [
+      "Lats"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Multi-purpose Weight Rack",
+    "floor": 5,
+    "in_use": false,
+    "x": 4.0,
+    "y": 16.0,
+    "muscles": [
+      "Calves",
+      "Chest",
+      "Back",
+      "Shoulder",
+      "Hamstrings",
+      "Quads",
+      "Glutes"
+    ]
+  }
+]

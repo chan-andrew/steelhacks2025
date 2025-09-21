@@ -6,6 +6,7 @@ import { ClientOnly3D } from '@/components/ClientOnly3D';
 import { NavigationControls } from '@/components/ui/NavigationControls';
 import { MachineStatusPanel } from '@/components/ui/MachineStatusPanel';
 import { EquipmentLegend } from '@/components/ui/EquipmentLegend';
+import { FloorScrollBar } from '@/components/ui/FloorScrollBar';
 import { LoadingScreen } from '@/components/ui/LoadingSpinner';
 import { useGymState } from '@/hooks/useGymState';
 
@@ -130,6 +131,15 @@ export default function Home() {
 
       {/* Equipment Legend - shows in floor detail view */}
       <EquipmentLegend show={isFloorDetailView && !gymState.isTransitioning} />
+
+      {/* Floor Scroll Bar - shows only in floor detail view */}
+      {isFloorDetailView && (
+        <FloorScrollBar
+          totalFloors={5}
+          currentFloor={selectedFloor?.id}
+          onFloorSelect={actions.selectFloor}
+        />
+      )}
 
       {/* Performance Info (Development Only) */}
       {process.env.NODE_ENV === 'development' && (
