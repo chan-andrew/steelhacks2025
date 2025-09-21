@@ -57,12 +57,9 @@ export async function findNearest(
     return true;
   });
 
-  console.log("Candidates:", candidates);
-
   if (candidates.length === 0) {
     return { nearest: null as MachineNode | null, top: [] as MachineNode[] };
   }
-
 
   // Rank by XY distance + floor penalty
   const ranked = candidates
